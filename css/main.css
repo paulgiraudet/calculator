@@ -98,6 +98,14 @@ textarea {
    ========================================================================== */
 
 
+.result{
+  border:1px solid black;
+  height:30px;
+}
+
+.calc_btn{
+  width:55px;
+}
 
 
 

@@ -12,17 +12,119 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <div class="container mt-5">
+    <div class="row">
+
+
+      <div class="col-md-4 mx-auto bg-secondary px-0">
+
+        <div class="row mx-0 px-0">
+          <div id="display" class="col-11 mx-auto mt-4 result bg-light text-right">
+
+          </div>
+
+          <div class="col-12 mt-4 pl-0">
+            <div class="row">
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="CE" onclick="restart()"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="&larr;" onclick="suppr()"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="%" onclick="operation('%')"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="+" onclick="operation('+')"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-4 pl-0">
+            <div class="row">
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="7" onclick="click_button(7)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="8" onclick="click_button(8)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="9" onclick="click_button(9)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="-" onclick="operation('-')"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-4 pl-0">
+            <div class="row">
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="4" onclick="click_button(4)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="5" onclick="click_button(5)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="6" onclick="click_button(6)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="x" onclick="operation('x')"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mt-4 pl-0">
+            <div class="row">
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="1" onclick="click_button(1)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="2" onclick="click_button(2)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="3" onclick="click_button(3)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="&divide;" onclick="operation('/')"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 my-4 pl-0">
+            <div class="row">
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="0" onclick="click_button(0)"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="&plusmn;" onclick="inversion()"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="," onclick="click_button('.')"/>
+              </div>
+              <div class="col-2 mx-auto key text-center">
+                <input type="button" class="calc_btn" value="=" onclick="result()"/>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
