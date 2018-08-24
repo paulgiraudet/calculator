@@ -7,9 +7,14 @@ var number1= "";
 //saving operators
 var sum ="";
 
+//counting coma
+var dot=0;
+
+var display = document.getElementById("display");
+
 //reinitialization
 function restart(){
-  number = document.getElementById("display").innerHTML = "" ;
+  number = display.innerHTML = "" ;
   number1="";
   sum="";
 }
@@ -18,7 +23,8 @@ function restart(){
 function inversion(){
   //need to be a number to work with -1 multiplication
   number=Number(number);
-  number = document.getElementById("display").innerHTML = number*(-1);
+  number = display.innerHTML = number*(-1);
+  number=number.toString();
 }
 
 //function suppr
@@ -26,12 +32,20 @@ function suppr(){
   //need to be a string to permit user deleting last character
   number=number.toString();
   number = number.substring(0, number.length - 1);
-  document.getElementById("display").innerHTML = number;
+  display.innerHTML = number;
 }
 
 //display number
 function click_button(n){
-  number = document.getElementById("display").innerHTML = number + n ;
+  number = display.innerHTML = number + n ;
+}
+
+//display dot
+function click_dot(n){
+  if (dot===0){
+    number = display.innerHTML = number + n ;
+    dot++;
+  }
 }
 
 //main operator system
@@ -40,25 +54,27 @@ function operation(n){
   //saving first value
   if (number1===""){
     number1 = Number(number);
+    dot=0;
   }
 
   //comparing previous operator to make the operation correctly
   else {
     number = Number(number);
     if (sum==="+"){
-      number=document.getElementById("display").innerHTML = number1 + number;
+      number=display.innerHTML = number1 + number;
     }
     else if (sum==="-"){
-      number=document.getElementById("display").innerHTML = number1 - number ;
+      number=display.innerHTML = number1 - number ;
     }
     else if (sum==="x"){
-      number=document.getElementById("display").innerHTML = number1 * number ;
+      number=display.innerHTML = number1 * number ;
     }
     else if (sum==="/"){
-      number=document.getElementById("display").innerHTML = number1 / number ;
+      number=display.innerHTML = number1 / number ;
     }
     //saving new value
     number1=number;
+    dot=0;
   }
 
   //reinitializing input value
@@ -74,26 +90,39 @@ function result(){
 
   number = Number(number);
   if (sum==="+"){
-    number=document.getElementById("display").innerHTML = number1 + number;
+    number=display.innerHTML = number1 + number;
   }
   else if (sum==="-"){
-    number=document.getElementById("display").innerHTML = number1 - number ;
+    number=display.innerHTML = number1 - number ;
   }
   else if (sum==="x"){
-    number=document.getElementById("display").innerHTML = number1 * number ;
+    number=display.innerHTML = number1 * number ;
   }
   else if (sum==="/"){
-    number=document.getElementById("display").innerHTML = number1 / number ;
+    number=display.innerHTML = number1 / number ;
   }
-
+  dot=0;
   number1="";
   sum="";
 }
 
 //function percentage
 function perc(){
-  number1=Number(number);
-  number=document.getElementById("display").innerHTML = number1 /100 ;
+  number=Number(number);
+  if (sum==="+"){
+    number=display.innerHTML = number1 + number;
+  }
+  else if (sum==="-"){
+    number=display.innerHTML = number1 - number ;
+  }
+  else if (sum==="x"){
+    number=display.innerHTML = number1 * number ;
+  }
+  else if (sum==="/"){
+    number=display.innerHTML = number1 / number ;
+  }
+  number=display.innerHTML = number /100 ;
+  sum="";
 }
 
 
