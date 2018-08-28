@@ -54,24 +54,13 @@ function operation(n){
   //saving first value
   if (number1===""){
     number1 = Number(number);
+    //reinitializing dot for each number
     dot=0;
   }
 
   //comparing previous operator to make the operation correctly
   else {
-    number = Number(number);
-    if (sum==="+"){
-      number=display.innerHTML = number1 + number;
-    }
-    else if (sum==="-"){
-      number=display.innerHTML = number1 - number ;
-    }
-    else if (sum==="x"){
-      number=display.innerHTML = number1 * number ;
-    }
-    else if (sum==="/"){
-      number=display.innerHTML = number1 / number ;
-    }
+    calcul();
     //saving new value
     number1=number;
     dot=0;
@@ -88,26 +77,23 @@ function operation(n){
 //only "=" button
 function result(){
 
-  number = Number(number);
-  if (sum==="+"){
-    number=display.innerHTML = number1 + number;
-  }
-  else if (sum==="-"){
-    number=display.innerHTML = number1 - number ;
-  }
-  else if (sum==="x"){
-    number=display.innerHTML = number1 * number ;
-  }
-  else if (sum==="/"){
-    number=display.innerHTML = number1 / number ;
-  }
+  calcul();
   dot=0;
+  //we want to go back to the first operation() condition
   number1="";
   sum="";
 }
 
 //function percentage
 function perc(){
+  calcul();
+  number=display.innerHTML = number /100 ;
+  //reinitializing sum value avoid miscalculation with the previous sum
+  sum="";
+}
+
+//we use this one to compare our operator and do the correspondant operation
+function calcul(){
   number=Number(number);
   if (sum==="+"){
     number=display.innerHTML = number1 + number;
@@ -121,15 +107,4 @@ function perc(){
   else if (sum==="/"){
     number=display.innerHTML = number1 / number ;
   }
-  number=display.innerHTML = number /100 ;
-  sum="";
 }
-
-
-
-
-//garder l'opérateur et si la valeur du premier nombre est "" juste garder
-// l'opérateur en mémoire sinon faire l'opération directement
-//utiliser une variable de substitution qui est vide au depart et qui prend
-//la valeur du premier chiffre si et seulement si on a gardé l'opérateur en
-//mémoire sinon il prend la valeur de l'opération
