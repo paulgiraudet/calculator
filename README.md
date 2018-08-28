@@ -1,4 +1,4 @@
-# Memory_game
+# Calculator
 Calculator by Paul
 
 ## Contributing
